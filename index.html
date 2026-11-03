@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сулейманова Патимат - Косметолог</title>
+
+    <!-- ========================================== -->
+    <!-- МЕТА-ТЕГИ ДЛЯ ПРЕВЬЮ ССЫЛКИ (Open Graph)   -->
+    <!-- ========================================== -->
     <meta property="og:title" content="Сулейманова Патимат - Косметолог" />
     <meta property="og:description" content="Прайс на услуги. Запись на прием. Москва и Дагестан." />
     <meta property="og:image" content="https://stamerla-collab.github.io/cosmetic-corporation/images/f2.jpg" />
     <meta property="og:url" content="https://stamerla-collab.github.io/cosmetic-corporation/" />
     <meta property="og:type" content="website" />
+
+    <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -29,7 +36,6 @@
             align-items: center;
             overflow-x: hidden;
         }
-
 
         .header-title {
             font-family: 'Playfair Display', serif;
@@ -98,8 +104,7 @@
                 border-color: #ffffff;
             }
 
-
-
+        /* --- ПРАЙС-ЛИСТ --- */
         .price-section {
             width: 100%;
             max-width: 600px;
@@ -118,7 +123,6 @@
             margin-bottom: 30px;
             text-align: center;
         }
-
 
         .city-tabs {
             display: flex;
@@ -153,7 +157,6 @@
                 font-weight: 500;
             }
 
-
         .tab-bg {
             position: absolute;
             top: 5px;
@@ -165,7 +168,6 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 0;
         }
-
 
         .price-list {
             width: 100%;
@@ -225,7 +227,6 @@
             letter-spacing: 0;
         }
 
-
         .fade-out {
             opacity: 0;
         }
@@ -233,6 +234,126 @@
         .fade-in {
             opacity: 1;
         }
+
+        /* --- СТИЛИ ДЛЯ БЛОКА ОБУЧЕНИЯ --- */
+        .training-section {
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .training-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .accordion {
+            width: 100%;
+            border-top: 1px solid #fff;
+        }
+
+            .accordion:last-child {
+                border-bottom: 1px solid #fff;
+            }
+
+        .accordion-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            color: #fff;
+            padding: 20px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-align: left;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+            .accordion-header:hover {
+                color: #ccc;
+            }
+
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 36px;
+            height: 36px;
+            background-color: #e5e5e5;
+            border-radius: 50%;
+            color: #333;
+            transition: transform 0.4s ease, background-color 0.4s ease;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .accordion-header.active .icon-wrapper {
+            transform: rotate(45deg);
+            background-color: #fff;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .accordion-inner {
+            padding-bottom: 25px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .training-city {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .training-desc {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .training-list-title {
+            margin-bottom: 15px;
+        }
+
+        .training-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+            .training-list li {
+                margin-bottom: 5px;
+            }
+
+        .training-price {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+            .training-price strong {
+                font-size: 1.05rem;
+            }
 
         @media (max-width: 480px) {
             .header-title {
@@ -246,7 +367,7 @@
                 bottom: 20px;
             }
 
-            .price-title {
+            .price-title, .training-title {
                 font-size: 1.4rem;
             }
 
@@ -257,303 +378,390 @@
             .service-header {
                 font-size: 0.85rem;
             }
+
+            .accordion-header {
+                font-size: 0.85rem;
+                padding: 15px 0;
+            }
+
+            .icon-wrapper {
+                width: 30px;
+                height: 30px;
+            }
+
+                .icon-wrapper svg {
+                    width: 16px;
+                    height: 16px;
+                }
+
+            .accordion-inner {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    
     <h1 class="header-title">СУЛЕЙМАНОВА ПАТИМАТ</h1>
 
     <div class="hero-container">
-        
-        <img img src="images/f2.jpg" alt="СУЛЕЙМАНОВА ПАТИМАТ" class="hero-image">
-
+        <!-- Обратите внимание: здесь исправлено img img на просто img -->
+        <img src="images/f2.jpg" alt="СУЛЕЙМАНОВА ПАТИМАТ" class="hero-image">
         <div class="fade-overlay"></div>
-
-        
         <a href="https://wa.me/79189898524" class="btn">ЗАПИСАТЬСЯ НА ПРИЕМ</a>
     </div>
 
-    
+    <!-- ПРАЙС-ЛИСТ -->
     <section class="price-section">
         <h2 class="price-title">Прайс на услуги</h2>
 
-       
         <div class="city-tabs">
             <div class="tab-bg" id="tab-bg"></div>
             <button class="tab-btn active" onclick="switchCity('moscow', this)">Москва</button>
-            <button class="tab-btn" onclick="switchCity('makhachkala', this)">Дагестана</button>
+            <button class="tab-btn" onclick="switchCity('makhachkala', this)">Дагестан</button>
         </div>
 
-       
         <div class="price-list" id="price-list">
-            
+            <!-- Сюда автоматически подставятся цены -->
         </div>
     </section>
 
-    
-    <script>
-    
-    const priceData = {
-      moscow: [
-        {
-          header: "Увеличение губ",
-          items: [
-              { name: "Корея", price: "1 ML / 12000 РУБ." },
-              { name: "Европа", price: "1 ML / 15000 РУБ." }
-          ]
-        },
-        {
-          header: "Заполнение носогубных складок",
-          items: [
-              { name: "Корея", price: "1 ML / 12000 РУБ." },
-              { name: "Европа", price: "1 ML / 15000 РУБ." }
-          ]
-        },
-        {
-          header: "Коррекция формы подбородка",
-          items: [
-              { name: "Корея", price: "1 ML / 12000 РУБ." },
-              { name: "Европа", price: "1 ML / 15000 РУБ." }
-          ]
-        },
-        {
-          header: "Коррекция углов нижней челюсти",
-          items: [
-              { name: "Корея", price: "1 ML / 12000 РУБ." },
-              { name: "Европа", price: "1 ML / 15000 РУБ." }
-          ]
-        },
-        {
-            header: "Коррекция скул",
-          items: [
-              { name: "Корея", price: "1 ML / 12000 РУБ." },
-              { name: "Европа", price: "1 ML / 15000 РУБ." }
-          ]
-        },
-        {
-            header: "Носослезная борозда",
-            items: [
-                { name: "Корея", price: "1 ML / 12000 РУБ." },
-                { name: "Европа", price: "1 ML / 15000 РУБ." },
-                { name: "TEOSYAL REDENSITY", price: "2 ML / 16000 РУБ." }
-            ]   
-        },
-        {
-            header: "Биоревитализация",
-            items: [
-                { name: "MESO-XANTHIN", price: "12000 РУБ." },
-                { name: "REVI SILK", price: "15000 РУБ." },
-                { name: "REVI STRONG", price: "2 ML / 16000 РУБ." },
-                { name: "NOVACUTAN SBIO", price: "2 ML / 15000 РУБ." },
-                { name: "NOVACUTAN YBIO", price: "2 ML / 15000 РУБ." },
-                { name: "PLINEST", price: "15000 РУБ." },
-                { name: "COLLOST MICRO + FILORGA NSTF 135", price: "23000 РУБ." },
-                { name: "REVI EVE ", price: "12000 РУБ." },
-                { name: "Bellarti Nucleo 20", price: "18000 РУБ." },
-                { name: "Bellarti Vita Plus", price: "15000 РУБ." }
-            ]   
-        },
-        {
-            header: "Коллагенастимуляция",
-            items: [
-                { name: "Bellarti Estilla", price: "18000 РУБ." },
-                { name: "COLLOST MICRO", price: "1 ML / 16000 РУБ." },
-                { name: "AestheFill", price: "2 ML / 27000 РУБ." }
-            ]   
-        },   
-        {
-            header: "Липолитики",
-            items: [
-                { name: "Стройность", price: "12000 РУБ." },
-                { name: "Липолонг", price: "12000 РУБ." }
-            ]    
-        },
-        {
-            header: "Ботулинотерапия",
-            items: [
-                { name: "Сужение носа", price: "1 unit / 300 РУБ." },
-                { name: "Межбровье", price: "1 unit / 300 РУБ." },
-                { name: "Лоб", price: "1 unit / 300 РУБ." },
-                { name: "Бруксизм", price: "1 unit / 300 РУБ." },
-                { name: "Подбородок", price: "1 unit / 300 РУБ." },
-                { name: "Лечение гипергидроз", price: "1 unit / 300 РУБ." },
-                { name: "Фул-фейс", price: "30000 РУБ." }
-            ]   
-        },
-        {
-            header: "Векторный лифтинг",
-            items: [
-                { name: "RADIESSE 1.5 / 3 ML", price: "18.000/30.000 РУБ." }
-            ]   
-        },
-        {
-            header: "Заполнение колец Венеры",
-                items: [
-                    { name: "BELOTERO SOFT", price: "14000 РУБ." }
-                ]
-        }
-      ],
-      makhachkala: [
-          {
-              header: "Увеличение губ",
-              items: [
-                  { name: "Корея", price: "1 ML / 9000 РУБ." },
-                  { name: "Европа", price: "1 ML / 13000 РУБ." }
-              ]
-          },
-          {
-              header: "Заполнение носогубных складок",
-              items: [
-                  { name: "Корея", price: "1 ML / 9000 РУБ." },
-                  { name: "Европа", price: "1 ML / 13000 РУБ." }
-              ]
-          },
-          {
-              header: "Коррекция формы подбородка",
-              items: [
-                  { name: "Корея", price: "1 ML / 9000 РУБ." },
-                  { name: "Европа", price: "1 ML / 13000 РУБ." }
-              ]
-          },
-          {
-              header: "Коррекция углов нижней челюсти",
-              items: [
-                  { name: "Корея", price: "1 ML / 9000 РУБ." },
-                  { name: "Европа", price: "1 ML / 13000 РУБ." }
-              ]
-          },
-          {
-              header: "Коррекция скул",
-              items: [
-                  { name: "Корея", price: "1 ML / 9000 РУБ." },
-                  { name: "Европа", price: "1 ML / 13000 РУБ." }
-              ]
-          },
-          {
-              header: "Носослезная борозда",
-              items: [
-                  { name: "Корея", price: "1 ML / 9000 РУБ." },
-                  { name: "Европа", price: "1 ML / 13000 РУБ." },
-                  { name: "TEOSYAL REDENSITY", price: "2 ML / 14000 РУБ." }
-              ]
-          },
-          {
-              header: "Биоревитализация",
-              items: [
-                  { name: "MESO-XANTHIN", price: "10000 РУБ." },
-                  { name: "REVI SILK", price: "13000 РУБ." },
-                  { name: "REVI STRONG", price: "2 ML / 14000 РУБ." },
-                  { name: "NOVACUTAN SBIO", price: "2 ML / 13000 РУБ." },
-                  { name: "NOVACUTAN YBIO", price: "2 ML / 13000 РУБ." },
-                  { name: "PLINEST", price: "13000 РУБ." },
-                  { name: "COLLOST MICRO + FILORGA NSTF 135", price: "20000 РУБ." },
-                  { name: "REVI EVE ", price: "12000 РУБ." },
-                  { name: "Bellarti Nucleo 20", price: "16000 РУБ." },
-                  { name: "Bellarti Vita Plus", price: "13000 РУБ." }
-              ]
-          },
-          {
-              header: "Коллагенастимуляция",
-              items: [
-                  { name: "Bellarti Estilla", price: "16000 РУБ." },
-                  { name: "COLLOST MICRO", price: "1 ML / 14000 РУБ." },
-                  { name: "AestheFill", price: "2 ML / 25000 РУБ." }
-              ]
-          },
-          {
-              header: "Липолитики",
-              items: [
-                  { name: "Стройность", price: "9000 РУБ." },
-                  { name: "Липолонг", price: "9000 РУБ." }
-              ]
-          },
-          {
-              header: "Ботулинотерапия",
-              items: [
-                  { name: "Сужение носа", price: "1 unit / 250 РУБ." },
-                  { name: "Межбровье", price: "1 unit / 250 РУБ." },
-                  { name: "Лоб", price: "1 unit / 250 РУБ." },
-                  { name: "Бруксизм", price: "1 unit / 250 РУБ." },
-                  { name: "Подбородок", price: "1 unit / 250 РУБ." },
-                  { name: "Лечение гипергидроз", price: "1 unit / 250 РУБ." },
-                  { name: "Фул-фейс", price: "28000 РУБ." }
-              ]
-          },
-          {
-              header: "Векторный лифтинг",
-              items: [
-                  { name: "RADIESSE 1.5 / 3 ML", price: "17.000/28.000 РУБ." }
-              ]
-          },
-          {
-              header: "Заполнение колец Венеры",
-              items: [
-                  { name: "BELOTERO SOFT", price: "12000 РУБ." }
-              ]
-          }
-      ]
-    };
+    <!-- БЛОК ОБУЧЕНИЯ -->
+    <section class="training-section">
+        <h2 class="training-title">ОБУЧЕНИЕ</h2>
 
+        <!-- Карточка 1 -->
+        <div class="accordion">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>КОНТУРНАЯ ПЛАСТИКА ЛИЦА</span>
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <p class="training-desc"><u>Обучение по контурной пластике лица</u></p>
+                    <p class="training-list-title">Губы, носослезная, носощечная, скулы, углы Джоли, носогубные, подбородок, векторный лифтинг</p>
+                    <p class="training-price">Стоимость обучения: <strong>180 000 руб.</strong></p>
+                </div>
+            </div>
+        </div>
 
+        <!-- Карточка 2 -->
+        <div class="accordion">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>МЕЗОТЕРАПИЯ И БИОРЕВИТАЛИЗАЦИЯ</span>
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <p class="training-desc"><u>Курс: Мезотерапия, биоревитализация, коллагеностимуляция, полимолочная кислота</u></p>
+                    <p class="training-price">Стоимость обучения: <strong>80 000 руб.</strong></p>
+                </div>
+            </div>
+        </div>
 
-    const priceListEl = document.getElementById('price-list');
-    const tabBg = document.getElementById('tab-bg');
+        <!-- Карточка 3 -->
+        <div class="accordion">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>БОТУЛИНОТЕРАПИЯ</span>
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <p class="training-desc"><u>Обучение ботулинотерапии</u></p>
+                    <ul class="training-list">
+                        <li>С нуля — <strong>50 000 руб.</strong></li>
+                        <li>Продвинутый — <strong>25 000 руб.</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
    
-    function renderPrices(cityKey) {
-      const data = priceData[cityKey];
-      let html = '';
+    <script>
+ 
+        const priceData = {
+            moscow: [
+                {
+                    header: "Увеличение губ",
+                    items: [
+                        { name: "Корея", price: "1 ML / 12000 РУБ." },
+                        { name: "Европа", price: "1 ML / 15000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Заполнение носогубных складок",
+                    items: [
+                        { name: "Корея", price: "1 ML / 12000 РУБ." },
+                        { name: "Европа", price: "1 ML / 15000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Коррекция формы подбородка",
+                    items: [
+                        { name: "Корея", price: "1 ML / 12000 РУБ." },
+                        { name: "Европа", price: "1 ML / 15000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Коррекция углов нижней челюсти",
+                    items: [
+                        { name: "Корея", price: "1 ML / 12000 РУБ." },
+                        { name: "Европа", price: "1 ML / 15000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Коррекция скул",
+                    items: [
+                        { name: "Корея", price: "1 ML / 12000 РУБ." },
+                        { name: "Европа", price: "1 ML / 15000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Носослезная борозда",
+                    items: [
+                        { name: "Корея", price: "1 ML / 12000 РУБ." },
+                        { name: "Европа", price: "1 ML / 15000 РУБ." },
+                        { name: "TEOSYAL REDENSITY", price: "2 ML / 16000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Биоревитализация",
+                    items: [
+                        { name: "MESO-XANTHIN", price: "12000 РУБ." },
+                        { name: "REVI SILK", price: "15000 РУБ." },
+                        { name: "REVI STRONG", price: "2 ML / 16000 РУБ." },
+                        { name: "NOVACUTAN SBIO", price: "2 ML / 15000 РУБ." },
+                        { name: "NOVACUTAN YBIO", price: "2 ML / 15000 РУБ." },
+                        { name: "PLINEST", price: "15000 РУБ." },
+                        { name: "COLLOST MICRO + FILORGA NSTF 135", price: "23000 РУБ." },
+                        { name: "REVI EVE ", price: "12000 РУБ." },
+                        { name: "Bellarti Nucleo 20", price: "18000 РУБ." },
+                        { name: "Bellarti Vita Plus", price: "15000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Коллагенастимуляция",
+                    items: [
+                        { name: "Bellarti Estilla", price: "18000 РУБ." },
+                        { name: "COLLOST MICRO", price: "1 ML / 16000 РУБ." },
+                        { name: "AestheFill", price: "2 ML / 27000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Липолитики",
+                    items: [
+                        { name: "Стройность", price: "12000 РУБ." },
+                        { name: "Липолонг", price: "12000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Ботулинотерапия",
+                    items: [
+                        { name: "Сужение носа", price: "1 unit / 300 РУБ." },
+                        { name: "Межбровье", price: "1 unit / 300 РУБ." },
+                        { name: "Лоб", price: "1 unit / 300 РУБ." },
+                        { name: "Бруксизм", price: "1 unit / 300 РУБ." },
+                        { name: "Подбородок", price: "1 unit / 300 РУБ." },
+                        { name: "Лечение гипергидроз", price: "1 unit / 300 РУБ." },
+                        { name: "Фул-фейс", price: "30000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Векторный лифтинг",
+                    items: [
+                        { name: "RADIESSE 1.5 / 3 ML", price: "18.000/30.000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Заполнение колец Венеры",
+                    items: [
+                        { name: "BELOTERO SOFT", price: "14000 РУБ." }
+                    ]
+                }
+            ],
+            makhachkala: [
+                {
+                    header: "Увеличение губ",
+                    items: [
+                        { name: "Корея", price: "1 ML / 9000 РУБ." },
+                        { name: "Европа", price: "1 ML / 13000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Заполнение носогубных складок",
+                    items: [
+                        { name: "Корея", price: "1 ML / 9000 РУБ." },
+                        { name: "Европа", price: "1 ML / 13000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Коррекция формы подбородка",
+                    items: [
+                        { name: "Корея", price: "1 ML / 9000 РУБ." },
+                        { name: "Европа", price: "1 ML / 13000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Коррекция углов нижней челюсти",
+                    items: [
+                        { name: "Корея", price: "1 ML / 9000 РУБ." },
+                        { name: "Европа", price: "1 ML / 13000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Коррекция скул",
+                    items: [
+                        { name: "Корея", price: "1 ML / 9000 РУБ." },
+                        { name: "Европа", price: "1 ML / 13000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Носослезная борозда",
+                    items: [
+                        { name: "Корея", price: "1 ML / 9000 РУБ." },
+                        { name: "Европа", price: "1 ML / 13000 РУБ." },
+                        { name: "TEOSYAL REDENSITY", price: "2 ML / 14000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Биоревитализация",
+                    items: [
+                        { name: "MESO-XANTHIN", price: "10000 РУБ." },
+                        { name: "REVI SILK", price: "13000 РУБ." },
+                        { name: "REVI STRONG", price: "2 ML / 14000 РУБ." },
+                        { name: "NOVACUTAN SBIO", price: "2 ML / 13000 РУБ." },
+                        { name: "NOVACUTAN YBIO", price: "2 ML / 13000 РУБ." },
+                        { name: "PLINEST", price: "13000 РУБ." },
+                        { name: "COLLOST MICRO + FILORGA NSTF 135", price: "20000 РУБ." },
+                        { name: "REVI EVE ", price: "12000 РУБ." },
+                        { name: "Bellarti Nucleo 20", price: "16000 РУБ." },
+                        { name: "Bellarti Vita Plus", price: "13000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Коллагенастимуляция",
+                    items: [
+                        { name: "Bellarti Estilla", price: "16000 РУБ." },
+                        { name: "COLLOST MICRO", price: "1 ML / 14000 РУБ." },
+                        { name: "AestheFill", price: "2 ML / 25000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Липолитики",
+                    items: [
+                        { name: "Стройность", price: "9000 РУБ." },
+                        { name: "Липолонг", price: "9000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Ботулинотерапия",
+                    items: [
+                        { name: "Сужение носа", price: "1 unit / 250 РУБ." },
+                        { name: "Межбровье", price: "1 unit / 250 РУБ." },
+                        { name: "Лоб", price: "1 unit / 250 РУБ." },
+                        { name: "Бруксизм", price: "1 unit / 250 РУБ." },
+                        { name: "Подбородок", price: "1 unit / 250 РУБ." },
+                        { name: "Лечение гипергидроз", price: "1 unit / 250 РУБ." },
+                        { name: "Фул-фейс", price: "28000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Векторный лифтинг",
+                    items: [
+                        { name: "RADIESSE 1.5 / 3 ML", price: "17.000/28.000 РУБ." }
+                    ]
+                },
+                {
+                    header: "Заполнение колец Венеры",
+                    items: [
+                        { name: "BELOTERO SOFT", price: "12000 РУБ." }
+                    ]
+                }
+            ]
+        };
 
-      data.forEach(group => {
-        html += `<div class="service-group">`;
-        html += `<div class="service-header">${group.header}</div>`;
+        const priceListEl = document.getElementById('price-list');
+        const tabBg = document.getElementById('tab-bg');
 
-        group.items.forEach(item => {
-          html += `
-            <div class="service-item">
-              <div class="service-name">${item.name}</div>
-              <div class="service-price">
-                ${item.price}
-                ${item.note ? `<span class="service-note">${item.note}</span>` : ''}
-              </div>
-            </div>
-          `;
-        });
-        html += `</div>`;
-      });
+        function renderPrices(cityKey) {
+            const data = priceData[cityKey];
+            let html = '';
 
-      
-      priceListEl.classList.add('fade-out');
+            data.forEach(group => {
+                html += `<div class="service-group">`;
+                html += `<div class="service-header">${group.header}</div>`;
 
-      setTimeout(() => {
-        priceListEl.innerHTML = html;
-        priceListEl.classList.remove('fade-out');
-        priceListEl.classList.add('fade-in');
-      }, 200); 
-    }
+                group.items.forEach(item => {
+                    html += `
+                <div class="service-item">
+                  <div class="service-name">${item.name}</div>
+                  <div class="service-price">
+                    ${item.price}
+                    ${item.note ? `<span class="service-note">${item.note}</span>` : ''}
+                  </div>
+                </div>
+              `;
+                });
+                html += `</div>`;
+            });
 
-  
-    function switchCity(cityKey, btnElement) {
-    
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      btnElement.classList.add('active');
+            priceListEl.classList.add('fade-out');
 
-    
-      if (cityKey === 'makhachkala') {
-        tabBg.style.transform = 'translateX(100%)';
-      } else {
-        tabBg.style.transform = 'translateX(0)';
-      }
+            setTimeout(() => {
+                priceListEl.innerHTML = html;
+                priceListEl.classList.remove('fade-out');
+                priceListEl.classList.add('fade-in');
+            }, 200);
+        }
 
-      
-      renderPrices(cityKey);
-    }
+        function switchCity(cityKey, btnElement) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
 
-    
-    renderPrices('moscow');
+            if (cityKey === 'makhachkala') {
+                tabBg.style.transform = 'translateX(100%)';
+            } else {
+                tabBg.style.transform = 'translateX(0)';
+            }
 
+            renderPrices(cityKey);
+        }
+
+        
+        renderPrices('moscow');
+
+        
+        function toggleAccordion(button) {
+            
+            button.classList.toggle('active');
+
+            
+            const content = button.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
     </script>
 </body>
 </html>
